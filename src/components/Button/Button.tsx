@@ -3,6 +3,6 @@ import { styled } from "@mui/material";
 
 export const Button = styled(MuiButton)<ButtonProps>(({ theme }) => ({
   textTransform: "none",
-  fontWeight: 500,
+  fontWeight: theme.typography.fontWeightMedium,
   borderRadius: theme.spacing(3),
 }));
