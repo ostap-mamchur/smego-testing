@@ -7,8 +7,19 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Inter", "sans-serif"].join(',')
+    fontFamily: ["Inter", "sans-serif"].join(','),
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          textTransform: "none",
+          fontWeight: theme.typography.fontWeightMedium,
+          borderRadius: theme.spacing(3),
+        })
+      }
+    }
+  }
 })
 
 export { theme };
