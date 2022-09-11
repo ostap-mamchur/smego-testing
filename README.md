@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-[See build](https://github.com/ostap-mamchur/smego-testing/build)).
+[See build](https://github.com/ostap-mamchur/smego-testing/build).
 
 ## Available Scripts
 
