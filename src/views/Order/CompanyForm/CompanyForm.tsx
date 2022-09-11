@@ -67,8 +67,10 @@ export const CompanyForm: React.FC<CompanyFormProps> = ({ moveToNextPage }) => {
         }
         sx={{ marginBottom: "1em" }}
       >
-        {countries.map((country) => (
-          <MenuItem value={country.name}>{country.name}</MenuItem>
+        {countries.map((country, index) => (
+          <MenuItem key={index} value={country.name}>
+            {country.name}
+          </MenuItem>
         ))}
       </StyledTextField>
     </FormTemplate>
