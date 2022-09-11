@@ -26,9 +26,6 @@ export const StyledTextField = styled(({ ...props }: TextFieldProps) => (
     backgroundColor: "transparent",
     transition: theme.transitions.create(["border-color", "background-color"]),
     borderColor: "#CCCCCC",
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
     "&.Mui-focused": {
       backgroundColor: "#F7F7F7",
       borderColor: "#D9D9D9",

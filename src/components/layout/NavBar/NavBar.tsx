@@ -7,10 +7,10 @@ export const NavBar: React.FC = () => {
   return (
     <StyledNavBar position="static">
       <Grid container sx={{ alignItems: "center" }}>
-        <Grid item md={3}>
+        <Grid item xs={6} sm={6} md={3}>
           <Logo />
         </Grid>
-        <Grid item md={6}>
+        <Grid item xs={6} sm={6} md={6}>
           <Typography variant="h5" component="h1">Application</Typography>
         </Grid>
       </Grid>

@@ -1,26 +1,27 @@
-import { useState } from "react";
+import { useAppDisptach } from "../../../shared/hooks/store/useAppDispatch";
+import { useAppSelector } from "../../../shared/hooks/store/useAppSelector";
+import { moveToNextPage, moveToPreviousPage } from "../../../store/order/order.slice";
 import { CompanyForm } from "../CompanyForm/CompanyForm";
 import { ContactPersonForm } from "../ContactPersonForm/ContactPersonForm";
-import { Contract } from "../Contract/Contract";
 
 export const MultiStepForm: React.FC = () => {
-  const [page, setPage] = useState(1);
+  const currentPage = useAppSelector((state) => state.order.currentPage);
 
-  const moveToNextPage = () => {
-    setPage(page + 1);
+  const dispatch = useAppDisptach();
+
+  const nextAction = () => {
+    dispatch(moveToNextPage())
   };
 
-  const moveToPreviousPage = () => {
-    setPage(page - 1);
+  const backAction = () => {
+    dispatch(moveToPreviousPage());
   };
 
-  switch (page) {
+  switch (currentPage) {
     case 1:
-      return <CompanyForm moveToNextPage={moveToNextPage} />;
+      return <CompanyForm moveToNextPage={nextAction} />;
     case 2:
-      return <ContactPersonForm moveToNextPage={moveToNextPage} moveToPreviousPage={moveToPreviousPage} />;
-    case 3:
-      return <Contract moveToPreviousPage={moveToPreviousPage} />;
+      return <ContactPersonForm moveToNextPage={nextAction} moveToPreviousPage={backAction} />;
     default:
       return <></>;
   }

@@ -1,18 +1,61 @@
 import List from "@mui/material/List";
+import { useAppSelector } from "../../../shared/hooks/store/useAppSelector";
 import { FormStep } from "../FormStep/FormStep";
 import { OrderProgressPercent } from "./OrderProgress.style";
 
+const pages = [
+  {
+    name: "Product and Amount",
+    percent: "0%",
+  },
+  {
+    name: "Company",
+    percent: "15%",
+  },
+  {
+    name: "Contact person",
+    percent: "25%",
+  },
+  {
+    name: "Beneficial owners",
+    percent: "40%",
+  },
+  {
+    name: "Factoring type",
+    percent: "60%",
+  },
+  {
+    name: "Third parties",
+    percent: "80%",
+  },
+];
+
+type status = "todo" | "active" | "completed";
+
+function getStatus(currentPage: number, pageNumber: number): status {
+  if (pageNumber < currentPage) {
+    return "completed";
+  } else if (pageNumber === currentPage) {
+    return "active";
+  } else {
+    return "todo";
+  }
+}
+
 export const OrderProgress: React.FC = () => {
+  const currentPage = useAppSelector((state) => state.order.currentPage);
+
   return (
     <div>
-      <OrderProgressPercent>15%</OrderProgressPercent>
+      <OrderProgressPercent>{pages[currentPage].percent}</OrderProgressPercent>
       <List sx={{ paddingLeft: 1 }}>
-        <FormStep status="completed" name="Product and Amount" />
-        <FormStep status="completed" name="Company" />
-        <FormStep status="active" name="Contact person" />
-        <FormStep status="todo" name="Beneficial owners" />
-        <FormStep status="todo" name="Factoring type" />
-        <FormStep status="todo" name="Third parties" />
+        {pages.map((page, index) => (
+          <FormStep
+            key={index}
+            status={getStatus(currentPage, index)}
+            name={page.name}
+          />
+        ))}
       </List>
     </div>
   );

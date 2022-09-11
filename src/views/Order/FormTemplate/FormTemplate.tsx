@@ -1,4 +1,5 @@
 import { Button, Typography } from "@mui/material";
+import { FormTitle, StyledForm } from "./FormTemplate.style";
 
 interface FormTemplateProps {
   title?: string;
@@ -15,15 +16,10 @@ export const FormTemplate: React.FC<FormTemplateProps> = ({
 }) => {
   return (
     <>
-      <Typography variant="h6" component="h3" sx={{ marginBottom: "3em" }}>
+      <FormTitle variant="h6">
         {title}
-      </Typography>
-      <form
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "0 2em",
-        }}
+      </FormTitle>
+      <StyledForm
       >
         {children}
         <div
@@ -52,7 +48,7 @@ export const FormTemplate: React.FC<FormTemplateProps> = ({
             </Button>
           )}
         </div>
-      </form>
+      </StyledForm>
     </>
   );
 };
