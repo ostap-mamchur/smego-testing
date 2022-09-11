@@ -5,6 +5,14 @@ const theme = createTheme({
     primary: {
       main: "#2B64F5"
     },
+    background: {
+      paper: "#ffffff",
+      default: "#F2F2F2"
+    },
+    action: {
+      active: "#7F7F7F",
+      disabled: "#B2B2B2"
+    }
   },
   typography: {
     fontFamily: ["Inter", "sans-serif"].join(','),
@@ -18,7 +26,7 @@ const theme = createTheme({
           borderRadius: theme.spacing(3),
         })
       }
-    }
+    },
   }
 })
 
