@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[See build](https://github.com/ostap-mamchur/smego-testing/build)).
 
 ## Available Scripts
 

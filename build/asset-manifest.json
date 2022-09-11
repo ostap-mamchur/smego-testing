@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/ostap-mamchur/smego-testing/build/static/js/main.e8166931.js",
+    "index.html": "/ostap-mamchur/smego-testing/build/index.html",
+    "main.e8166931.js.map": "/ostap-mamchur/smego-testing/build/static/js/main.e8166931.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.e8166931.js"
+  ]
+}
