@@ -6,7 +6,6 @@ import {
 } from "../../../store/order/order.slice";
 import { ComingSoonForm } from "../ComingSoonForm/ComingSoonForm";
 import { CompanyForm } from "../CompanyForm/CompanyForm";
-import { ContactPersonForm } from "../ContactPersonForm/ContactPersonForm";
 import { ContactPersonFormWrapper } from "../ContactPersonFormWrapper/ContactPersonFormWrapper";
 
 export const MultiStepForm: React.FC = () => {
