@@ -2,6 +2,14 @@
 
 [See build](https://github.com/ostap-mamchur/smego-testing/build).
 
+# Prerequisites
+
+---
+
+- NPM version: `8 or higher`
+- NODE.JS version: `17 or higher`
+
+
 ## Available Scripts
 
 In the project directory, you can run:
