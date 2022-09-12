@@ -1,21 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface CompanyFormData {
-  companyName: string;
-  companyCode: string;
-  countryOfRegistration: string;
-}
-
-interface ContactPersonFormData {
-  name: string;
-  surname: string;
-  jobTitle: string;
-  email: string;
-  phoneCode: string;
-  phoneNumber: string;
-  contract1: boolean;
-  contract2: boolean;
-}
+import { CompanyFormData, ContactPersonFormData } from "../../types/order/order.types";
 
 interface OrderState {
   formData: {

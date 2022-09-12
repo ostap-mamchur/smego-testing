@@ -1,4 +1,4 @@
-export type status = "todo" | "active" | "completed";
+import type { Status } from "../../types/order/order.types";
 
 export const OrderService = {
   pages: [
@@ -28,7 +28,7 @@ export const OrderService = {
     },
   ],
 
-  getStatus(currentPage: number, pageNumber: number): status {
+  getStatus(currentPage: number, pageNumber: number): Status {
     if (pageNumber < currentPage) {
       return "completed";
     } else if (pageNumber === currentPage) {

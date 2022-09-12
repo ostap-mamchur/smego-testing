@@ -1,9 +1,13 @@
 import { useAppDisptach } from "../../../shared/hooks/store/useAppDispatch";
 import { useAppSelector } from "../../../shared/hooks/store/useAppSelector";
-import { moveToNextPage, moveToPreviousPage } from "../../../store/order/order.slice";
+import {
+  moveToNextPage,
+  moveToPreviousPage,
+} from "../../../store/order/order.slice";
 import { ComingSoonForm } from "../ComingSoonForm/ComingSoonForm";
 import { CompanyForm } from "../CompanyForm/CompanyForm";
 import { ContactPersonForm } from "../ContactPersonForm/ContactPersonForm";
+import { ContactPersonFormWrapper } from "../ContactPersonFormWrapper/ContactPersonFormWrapper";
 
 export const MultiStepForm: React.FC = () => {
   const currentPage = useAppSelector((state) => state.order.currentPage);
@@ -11,7 +15,7 @@ export const MultiStepForm: React.FC = () => {
   const dispatch = useAppDisptach();
 
   const nextAction = () => {
-    dispatch(moveToNextPage())
+    dispatch(moveToNextPage());
   };
 
   const backAction = () => {
@@ -22,7 +26,12 @@ export const MultiStepForm: React.FC = () => {
     case 1:
       return <CompanyForm moveToNextPage={nextAction} />;
     case 2:
-      return <ContactPersonForm moveToNextPage={nextAction} moveToPreviousPage={backAction} />;
+      return (
+        <ContactPersonFormWrapper
+          moveToNextPage={nextAction}
+          moveToPreviousPage={backAction}
+        />
+      );
     default:
       return <ComingSoonForm />;
   }

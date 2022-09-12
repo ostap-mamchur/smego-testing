@@ -1,9 +1,10 @@
 import { ListItemIcon } from "@mui/material";
 import { ListItemName, ListItem } from "./FormStep.style";
 import DoneIcon from "@mui/icons-material/CheckCircleOutlined";
+import type { Status } from "../../../types/order/order.types";
 
 interface FormStepProps {
-  status: "completed" | "active" | "todo";
+  status: Status;
   name: string;
 }
 

@@ -3,6 +3,7 @@ import MuiListItemText, { ListItemTextProps } from "@mui/material/ListItemText";
 import MuiListItem, {
   ListItemProps as MuiListItemProps,
 } from "@mui/material/ListItem";
+import type { Status } from "../../../types/order/order.types";
 
 export const ListItemName = styled(MuiListItemText)<ListItemTextProps>(
   ({ theme }) => ({
@@ -12,7 +13,7 @@ export const ListItemName = styled(MuiListItemText)<ListItemTextProps>(
 );
 
 interface ListItemProps extends MuiListItemProps {
-  status?: "completed" | "active" | "todo";
+  status?: Status;
 }
 
 export const ListItem = styled(MuiListItem)<ListItemProps>(
