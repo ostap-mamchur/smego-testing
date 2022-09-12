@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/ostap-mamchur/smego-testing/build/static/js/main.e8166931.js",
-    "index.html": "/ostap-mamchur/smego-testing/build/index.html",
-    "main.e8166931.js.map": "/ostap-mamchur/smego-testing/build/static/js/main.e8166931.js.map"
+    "main.js": "/smego-testing/build/static/js/main.7c23dbf7.js",
+    "index.html": "/smego-testing/build/index.html",
+    "main.7c23dbf7.js.map": "/smego-testing/build/static/js/main.7c23dbf7.js.map"
   },
   "entrypoints": [
-    "static/js/main.e8166931.js"
+    "static/js/main.7c23dbf7.js"
   ]
 }
