@@ -10,7 +10,6 @@ interface ContactPersonFormData {
   name: string;
   surname: string;
   jobTitle: string;
-  countryOfCode: string;
   email: string;
   phoneCode: string;
   phoneNumber: string;
@@ -38,7 +37,6 @@ const initialState: OrderState = {
       surname: "",
       jobTitle: "",
       email: "",
-      countryOfCode: "",
       phoneCode: "",
       phoneNumber: "",
       contract1: false,

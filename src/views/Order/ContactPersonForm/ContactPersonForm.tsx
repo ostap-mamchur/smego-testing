@@ -20,6 +20,7 @@ interface ContactPersonFormProps {
 
 export const ContactPersonForm: React.FC<ContactPersonFormProps> = ({
   moveToPreviousPage,
+  moveToNextPage
 }) => {
   const contactPersonForm = useAppSelector(
     (state) => state.order.formData.contactPerson
@@ -32,7 +33,8 @@ export const ContactPersonForm: React.FC<ContactPersonFormProps> = ({
     initialValues: contactPersonForm,
     validationSchema: contactPersonFormDataSchema,
     onSubmit: (values) => {
-      dispatch(fillContactPersonFormData(values))
+      dispatch(fillContactPersonFormData(values));
+      moveToNextPage();
     },
   });
 
@@ -55,6 +57,7 @@ export const ContactPersonForm: React.FC<ContactPersonFormProps> = ({
         value={formik.values.name}
         onChange={formik.handleChange}
         fullWidth
+        data-testid="name-input"
         sx={{ marginBottom: "1em" }}
         error={formik.touched.name && Boolean(formik.errors.name)}
         helperText={formik.touched.name && formik.errors.name}
@@ -93,6 +96,7 @@ export const ContactPersonForm: React.FC<ContactPersonFormProps> = ({
         <StyledTextField
           name="phoneCode"
           sx={{ flex: 2 }}
+          data-testid="phoneCode-select"
           select
           value={formik.values.phoneCode}
           onChange={formik.handleChange}
